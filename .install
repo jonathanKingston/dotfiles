@@ -23,3 +23,4 @@ gsettings set org.gnome.desktop.interface text-scaling-factor '1.5'
 
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 3
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 4
+gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
