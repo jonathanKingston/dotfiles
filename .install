@@ -1,0 +1,25 @@
+CWD=${pwd};
+rm -f "$HOME/examples.desktop";
+
+sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
+sudo apt-get update
+sudo apt-get install git ubuntu-make irssi
+umake web firefox-dev
+
+if [ ! -f "$HOME/.nvm/nvm.sh" ]; then
+    git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`;
+    cd $CWD;
+    nvm install node;
+fi
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+nvm use node;
+npm install --no-progress -g ava mocha ember-cli eslint;
+
+
+gsettings set org.gnome.desktop.interface text-scaling-factor '1.5'
+
+gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 3
+gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 4

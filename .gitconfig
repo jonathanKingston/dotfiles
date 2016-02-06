@@ -1,0 +1,18 @@
+[core]
+    editor = /usr/bin/vim
+    pager = /usr/bin/less
+    whitespace = space-before-tab,tab-in-indent,trailing-space,cr-at-eol,tabwidth=2
+[merge]
+    ff = no
+    commit = no
+[push]
+    default = matching
+[user]
+    name = Jonathan Kingston
+    email = jonathan@jooped.co.uk
+[transfer]
+    fsckobjects = true
+[fetch]
+    fsckobjects = true
+[receive]
+    fsckObjects = true
