@@ -13,7 +13,7 @@ git clone git@github.com:jonathanKingston/dotfiles.git;
 
 ```
 cd dotfiles;
-make install;
+sudo make install;
 cd ~/;
 source .install
 ```
