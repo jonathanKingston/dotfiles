@@ -118,5 +118,8 @@ if [ -f "$HOME/.nvm/nvm.sh" ]; then
   export PATH="$HOME/.node-packages/bin/:$PATH"
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-  nvm use node
+  # Latest node
+  #nvm use node
+  # Gaia uses node 4.2
+  nvm use 4.2
 fi
