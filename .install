@@ -14,7 +14,16 @@ sudo pip install --upgrade ndg-httpsclient
 
 sudo apt-get install android-tools-adb android-tools-fastboot
 
+
 umake web firefox-dev
+
+mkdir ~/projects/
+cd ~/projects;
+git clone --recursive https://github.com/brson/multirust && cd multirust
+git submodule update --init
+./build.sh && sudo ./install.sh
+multirust default nightly
+cd $CWD;
 
 if [ ! -f "$HOME/.nvm/nvm.sh" ]; then
     git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`;
