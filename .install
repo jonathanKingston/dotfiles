@@ -38,7 +38,7 @@ nvm use node;
 npm install --no-progress -g ava mocha ember-cli eslint;
 
 
-gsettings set org.gnome.desktop.interface text-scaling-factor '1.5'
+gsettings set org.gnome.desktop.interface text-scaling-factor '1'
 
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 3
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 4
