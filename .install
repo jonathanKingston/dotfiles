@@ -6,7 +6,7 @@ sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /et
 sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
 sudo apt-get update
 sudo dpkg --add-architecture i386
-sudo apt-get install mercurial gimp build-essential clang python-pip shutter htop tree vim git ubuntu-make irssi google-chrome-stable google-chrome-unstable
+sudo apt-get install gnupg2 mercurial gimp build-essential clang python-pip shutter htop tree vim git ubuntu-make irssi google-chrome-stable google-chrome-unstable
 # https://developer.mozilla.org/en-US/Firefox_OS/Firefox_OS_build_prerequisites
 sudo apt-get install --no-install-recommends autoconf2.13 bison bzip2 ccache curl flex gawk gcc g++ g++-multilib git lib32ncurses5-dev lib32z1-dev libgconf2-dev zlib1g:amd64 zlib1g-dev:amd64 zlib1g:i386 zlib1g-dev:i386 libgl1-mesa-dev libx11-dev make zip lzop libxml2-utils openjdk-7-jdk nodejs unzip python
 
@@ -14,29 +14,10 @@ sudo pip install --upgrade ndg-httpsclient
 
 sudo apt-get install android-tools-adb android-tools-fastboot
 
-
 umake web firefox-dev
 
 mkdir ~/projects/
-cd ~/projects;
-git clone --recursive https://github.com/brson/multirust && cd multirust
-git submodule update --init
-./build.sh && sudo ./install.sh
-multirust default nightly
 cd $CWD;
-
-if [ ! -f "$HOME/.nvm/nvm.sh" ]; then
-    git clone https://github.com/creationix/nvm.git ~/.nvm && cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`;
-    cd $CWD;
-fi
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-nvm install node;
-nvm use node;
-npm install --no-progress -g ava mocha ember-cli eslint;
-
 
 gsettings set org.gnome.desktop.interface text-scaling-factor '1'
 

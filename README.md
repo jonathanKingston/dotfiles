@@ -1,6 +1,6 @@
 # Dotfiles
 
-## Manual setup rereq
+## Manual setup prereq
 
 ```
 sudo apt-get install git;

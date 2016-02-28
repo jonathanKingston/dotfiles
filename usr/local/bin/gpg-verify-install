@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+gpg2 --verify $1 | grep -v 'error' | grep -v "can\'t" | grep '[full]';

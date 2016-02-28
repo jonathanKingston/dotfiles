@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+CWD=$(pwd);
+mkdir $CWD/software;
+SOFTWARE=$CWD/software;
+cd $SOFTWARE;
+
+mkdir $SOFTWARE/rvm;
+cd $SOFTWARE/rvm;
+# RVM
+# Install mpapis public key (might need `gpg2` and or `sudo`)
+gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+
+# Download the installer
+\curl -O https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer
+\curl -O https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer.asc
+
+# Verify the installer signature (might need `gpg2`), and if it validates...
+# Run the installer
+gpg2 --verify rvm-installer.asc #&& bash rvm-installer stable
+gpg-verify-install rvm-installer.asc
+
+return;
+cd $SOFTWARE;
+
+# Multirust
+git clone --recursive https://github.com/brson/multirust && cd multirust
+git submodule update --init
+./build.sh && sudo ./install.sh
+multirust default nightly
+
+if [ ! -f "$SOFTWARE/nvm/nvm.sh" ]; then
+    git clone https://github.com/creationix/nvm.git $SOFTWARE/nvm && cd $SOFTWARE/nvm && git checkout `git describe --abbrev=0 --tags`;
+    cd $CWD;
+fi
+
+
+export NVM_DIR="$SOFTWARE/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+nvm install node;
+nvm use node;
+
+npm install --no-progress -g ava mocha ember-cli eslint;
+
+cd $CWD;
