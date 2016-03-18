@@ -4,6 +4,9 @@ rm -f "$HOME/examples.desktop";
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
+sudo apt-get remove git
+sudo add-apt-repository --remove ppa:git-core/ppa
+sudo add-apt-repository ppa:git-core/candidate
 sudo apt-get update
 sudo dpkg --add-architecture i386
 sudo apt-get install chromium-browser whois gnupg2 mercurial gimp build-essential clang python-pip shutter htop tree vim git ubuntu-make irssi google-chrome-stable google-chrome-unstable
