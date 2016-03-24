@@ -4,6 +4,15 @@ mkdir $CWD/software;
 SOFTWARE=$CWD/software;
 cd $SOFTWARE;
 
+git clone https://github.com/Yubico/yubikey-personalization.git;
+cd yubikey-personalization;
+autoreconf --install;
+./configure;
+make check instakk;
+
+cd $SOFTWARE;
+
+
 mkdir $SOFTWARE/rvm;
 cd $SOFTWARE/rvm;
 # RVM

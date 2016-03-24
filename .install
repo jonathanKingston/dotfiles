@@ -9,7 +9,13 @@ sudo add-apt-repository --remove ppa:git-core/ppa
 sudo add-apt-repository ppa:git-core/candidate
 sudo apt-get update
 sudo dpkg --add-architecture i386
-sudo apt-get install chromium-browser whois gnupg2 mercurial gimp build-essential clang python-pip shutter htop tree vim git ubuntu-make irssi google-chrome-stable google-chrome-unstable
+sudo apt-get install secure-delete pinentry-curses nginx chromium-browser whois gnupg2 mercurial gimp build-essential clang python-pip shutter htop tree vim git ubuntu-make irssi google-chrome-stable google-chrome-unstable
+
+#yubikey
+
+sudo apt-get install asciidoc libtool automake autoconf
+sudo apt-get install libyubikey-dev pkg-config libusb-1.0-0-dev libjson0-dev
+
 # servo
 sudo apt-get install libglew-dev libcheese7 libcheese-gtk23 libclutter-gst-2.0-0 libcogl15 libclutter-gtk-1.0-0 libclutter-1.0-0 xserver-xorg-input-all
 sudo apt-get install curl freeglut3-dev autoconf \
@@ -17,6 +23,11 @@ sudo apt-get install curl freeglut3-dev autoconf \
     gperf g++ build-essential cmake python-virtualenv python-pip \
     libssl-dev libbz2-dev libosmesa6-dev libxmu6 libxmu-dev \
     libglu1-mesa-dev libgles2-mesa-dev libegl1-mesa-dev
+
+# keybase
+
+curl -O https://dist.keybase.io/linux/deb/keybase-latest-amd64.deb \
+&& sudo dpkg -i keybase-latest-amd64.deb;
 
 # https://developer.mozilla.org/en-US/Firefox_OS/Firefox_OS_build_prerequisites
 sudo apt-get install --no-install-recommends autoconf2.13 bison bzip2 ccache curl flex gawk gcc g++ g++-multilib git lib32ncurses5-dev lib32z1-dev libgconf2-dev zlib1g:amd64 zlib1g-dev:amd64 zlib1g:i386 zlib1g-dev:i386 libgl1-mesa-dev libx11-dev make zip lzop libxml2-utils openjdk-7-jdk nodejs unzip python
@@ -38,3 +49,6 @@ gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 4
 gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
 
 gsettings set org.gnome.desktop.background picture-uri 'file:///home/jonathan/Pictures/industrial.jpg'
+
+source .software;
+source .secrets;

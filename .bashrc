@@ -123,3 +123,5 @@ if [ -f "$HOME/.nvm/nvm.sh" ]; then
   # Gaia uses node 4.2
   nvm use 4.2
 fi
+
+#. /home/jonathan/.nix-profile/etc/profile.d/nix.sh
