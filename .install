@@ -51,4 +51,4 @@ gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-ama
 gsettings set org.gnome.desktop.background picture-uri 'file:///home/jonathan/Pictures/industrial.jpg'
 
 source .software;
-source .secrets;
+source .makesecrets;

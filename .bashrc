@@ -124,4 +124,4 @@ if [ -f "$HOME/.nvm/nvm.sh" ]; then
   nvm use 4.2
 fi
 
-#. /home/jonathan/.nix-profile/etc/profile.d/nix.sh
+. /home/jonathan/.nix-profile/etc/profile.d/nix.sh
