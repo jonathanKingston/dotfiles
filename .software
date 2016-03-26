@@ -24,11 +24,9 @@ gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB
 \curl -O https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer.asc
 
 # Verify the installer signature (might need `gpg2`), and if it validates...
-# Run the installer
-gpg2 --verify rvm-installer.asc #&& bash rvm-installer stable
-gpg-verify-install rvm-installer.asc
+# Run the installer verifies the gpg key is fully trusted
+gpg-verify-install rvm-installer.asc && bash rvm-installer stable
 
-return;
 cd $SOFTWARE;
 
 # Multirust

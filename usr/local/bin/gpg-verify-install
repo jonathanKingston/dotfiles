@@ -1,2 +1,10 @@
 #!/usr/bin/env bash
-gpg2 --verify $1 | grep -v 'error' | grep -v "can\'t" | grep '[full]';
+OUTPUT=$(gpg2 --verify $1  2>&1);
+WARNINGOUTPUT=$(echo "$OUTPUT" | grep 'WARNING');
+if [ "${WARNINGOUTPUT}" != '' ]; then
+  echo "GPG warning found!";
+  echo "    ${WARNINGOUTPUT}";
+  exit 1;
+fi
+echo "$OUTPUT" | grep -qv '[full]' && echo 'GPG not fully trusted.' && exit 1;
+exit 0
