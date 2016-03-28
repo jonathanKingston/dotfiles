@@ -2,14 +2,25 @@ CWD=${pwd};
 rm -f "$HOME/examples.desktop";
 
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
-sudo apt-get remove git
+sudo apt-get remove git ruby
 sudo add-apt-repository --remove ppa:git-core/ppa
 sudo add-apt-repository ppa:git-core/candidate
 sudo apt-get update
 sudo dpkg --add-architecture i386
 sudo apt-get install secure-delete pinentry-curses nginx chromium-browser whois gnupg2 mercurial gimp build-essential clang python-pip shutter htop tree vim git ubuntu-make irssi google-chrome-stable google-chrome-unstable
+
+# docker
+
+sudo apt-get install apt-transport-https ca-certificates;
+sudo sh -c 'echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" >> /etc/apt/sources.list.d/docker.list';
+sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D;
+sudo apt-get update;
+apt-cache policy docker-engine;
+sudo apt-get install linux-image-extra-$(uname -r);
+sudo apt-get install docker-engine;
+sudo service docker start;
 
 #yubikey
 
@@ -42,10 +53,10 @@ umake web firefox-dev
 mkdir ~/projects/
 cd $CWD;
 
-gsettings set org.gnome.desktop.interface text-scaling-factor '1'
+gsettings set org.gnome.desktop.interface text-scaling-factor '1.2'
 
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 3
-gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 4
+gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 6
 gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
 
 gsettings set org.gnome.desktop.background picture-uri 'file:///home/jonathan/Pictures/industrial.jpg'
