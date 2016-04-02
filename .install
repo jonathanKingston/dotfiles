@@ -9,8 +9,16 @@ sudo add-apt-repository --remove ppa:git-core/ppa
 sudo add-apt-repository ppa:git-core/candidate
 sudo apt-get update
 sudo dpkg --add-architecture i386
-sudo apt-get install secure-delete pinentry-curses nginx chromium-browser whois gnupg2 gimp build-essential clang python-pip shutter htop tree vim git ubuntu-make irssi google-chrome-stable google-chrome-unstable
+sudo apt-get install inkscape secure-delete pinentry-curses nginx chromium-browser whois gnupg2 gimp build-essential clang python-pip shutter htop tree vim git ubuntu-make irssi google-chrome-stable google-chrome-unstable
 # removing mercurial for now
+
+# Bikeshed
+
+sudo apt-get install python2.7 python-dev python-pip libxslt1-dev libxml2-dev;
+sudo pip install pygments;
+sudo pip install lxml;
+sudo pip install lxml --upgrade;
+
 
 # docker
 
