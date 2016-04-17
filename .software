@@ -40,6 +40,12 @@ fi;
 
 cd $SOFTWARE;
 
+git clone https://github.com/tabatkins/bikeshed.git;
+sudo pip install --editable $SOFTWARE/bikeshed;
+bikeshed update;
+
+cd $SOFTWARE;
+
 # Multirust
 git clone --recursive https://github.com/brson/multirust && cd multirust
 git submodule update --init
@@ -57,6 +63,6 @@ export NVM_DIR="$SOFTWARE/nvm"
 nvm install node;
 nvm use node;
 
-npm install --no-progress -g gulp-cli jpm browserify webpack markdown-preview http-server ava mocha ember-cli eslint;
+npm install --no-progress -g uglify-js gulp-cli jpm browserify webpack markdown-preview http-server ava mocha ember-cli eslint;
 
 cd $CWD;
