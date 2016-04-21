@@ -12,14 +12,14 @@ sudo dpkg --add-architecture i386
 sudo apt-get install jq nmap mongodb inkscape secure-delete pinentry-curses nginx chromium-browser whois gnupg2 gimp build-essential clang python-pip shutter htop tree vim git ubuntu-make irssi google-chrome-stable google-chrome-unstable
 # removing mercurial for now
 
-sudo apt-get install python3-dev postgresql
+sudo apt-get install python3-pip python3-dev postgresql
 
 # Bikeshed
 
 sudo apt-get install python2.7 python-dev python-pip libxslt1-dev libxml2-dev;
-sudo pip install pygments;
-sudo pip install lxml;
-sudo pip install lxml --upgrade;
+sudo pip3 install pygments;
+sudo pip3 install lxml;
+sudo pip3 install lxml --upgrade;
 
 
 # docker
@@ -52,10 +52,10 @@ curl -O https://dist.keybase.io/linux/deb/keybase-latest-amd64.deb \
 && sudo dpkg -i keybase-latest-amd64.deb;
 
 # https://developer.mozilla.org/en-US/Firefox_OS/Firefox_OS_build_prerequisites
-sudo apt-get install --no-install-recommends autoconf2.13 bison bzip2 ccache curl flex gawk gcc g++ g++-multilib git lib32ncurses5-dev lib32z1-dev libgconf2-dev zlib1g:amd64 zlib1g-dev:amd64 zlib1g:i386 zlib1g-dev:i386 libgl1-mesa-dev libx11-dev make zip lzop libxml2-utils openjdk-7-jdk nodejs unzip python
+sudo apt-get install --no-install-recommends autoconf2.13 bison bzip2 ccache curl flex gawk gcc g++ g++-multilib git lib32ncurses5-dev lib32z1-dev libgconf2-dev zlib1g:amd64 zlib1g-dev:amd64 zlib1g:i386 zlib1g-dev:i386 libgl1-mesa-dev libx11-dev make zip lzop libxml2-utils openjdk-8-jdk nodejs unzip python
 sudo apt-get purge xul-ext-ubufox
 
-sudo pip install --upgrade ndg-httpsclient
+sudo pip3 install --upgrade ndg-httpsclient
 
 sudo apt-get install android-tools-adb android-tools-fastboot
 
@@ -75,3 +75,4 @@ gsettings set org.gnome.desktop.background picture-uri 'file:///home/jonathan/Pi
 
 source .software;
 source .makesecrets;
+source .installfonts;

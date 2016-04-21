@@ -119,9 +119,9 @@ if [ -f "$HOME/.nvm/nvm.sh" ]; then
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
   # Latest node
-  #nvm use node
+  nvm use node
   # Gaia uses node 4.2
-  nvm use 4.2
+  #nvm use 4.2
 fi
 
 . /home/jonathan/.nix-profile/etc/profile.d/nix.sh

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+mkdir -p ~/.fonts/files;
+cd ~/.fonts/files;
+git clone https://github.com/mozilla/Fira.git;
+ls Fira/;
+ln -s ~/.fonts/files/Fira/otf/* ~/.fonts/;
