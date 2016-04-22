@@ -125,3 +125,5 @@ if [ -f "$HOME/.nvm/nvm.sh" ]; then
 fi
 
 . /home/jonathan/.nix-profile/etc/profile.d/nix.sh
+
+export EDITOR="vim"
